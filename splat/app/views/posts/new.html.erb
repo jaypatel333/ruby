@@ -1,9 +1,9 @@
 
 <body>
-    <nav class="purple lighten lighten-1" role="navigation" style="height: 95px;">
+    <nav class="purple lighten lighten-1" role="navigation" style="height: 95px; position:fixed;top:0;left:0;width:100%;">
     <div class="nav-wrapper">
       <a href="/welcome/index" class="brand-logo"a>
-          <img src="https://i.imgur.com/iuPAg8n.png" alt="log"
+          <img src="https://i.imgur.com/1oAIFYE.png" alt="log"
           title="splatlog"
           style="width: 178px; height: 158px;">
          
@@ -22,7 +22,7 @@
     </div>
     <div class="container" style="text-align: center;"><br>
     </div>
-    <div><br>
+    <div><br><br><br><br>
  <%= render 'form', post: @post %>
 
 <%= link_to 'Back', posts_path %>
@@ -44,10 +44,10 @@
     </div>
     <div class="container"><br>
     </div>
-    <footer class="purple lighten-2"> <br>
+  </body>
+ <footer class="purple lighten-2" style="position:fixed;bottom:0;left:0;width:100%;"> <br>
       <div class="footer-copyright">
         <div class="container"> Made by <span style="color: #fef5fd;">Splat</span>
         </div>
       </div>
     </footer>
-  </body>
