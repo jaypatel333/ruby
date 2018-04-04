@@ -20,10 +20,18 @@
     </div>
     <div class="container" style="text-align: center;"><br>
     </div>
-    <div class="container" style="text-align: center;"><br>
+    
+  <ul>
+   <li style="float:left">  <div class="container" style="text-align: center;"><br><br><br><br>
+   <h5>User Activity</h5><br><br>
+   <h6>Walls:</h6><br>
+   <h6>Posts:</h6><br>
     </div>
-    <div><br><br><br><br>
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+   </li>
+   <li style="float:right"> <div class="container" style="text-align: center;"><br>
+    <div class="container" style="text-align: left;"><br><br><br><br>
+    <h5>Account Settings</h5><br>
+<h6>Edit <%= resource_name.to_s.humanize %></h6>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -61,7 +69,7 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h6>Cancel my account</h6>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
@@ -85,6 +93,11 @@
     </div>
     <div class="container"><br>
     </div>
+    </div>
+   </li>
+  </ul>
+
+   
   </body>
  <footer class="purple lighten-2" style="position:fixed;bottom:0;left:0;width:100%;"> <br>
       <div class="footer-copyright">
