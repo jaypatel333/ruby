@@ -1,5 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+<body>
+    <nav class="purple lighten lighten-1" role="navigation" style="height: 95px; position:fixed;top:0;left:0;width:100%;">
+    <div class="nav-wrapper">
+      <a href="/welcome/index" class="brand-logo"a>
+          <img src="https://i.imgur.com/1oAIFYE.png" alt="log"
+          title="splatlog"
+          style="width: 178px; height: 158px;">
+         
+      <ul class="right hide-on-med-and-down">
+        <li><a class="waves-effect waves-purple btn-large" href="/walls/new">Create New Wall</a></li>
+        <li><a class="waves-effect waves-purple btn-large" href="/users/edit">Profile</a></li>
+        <li><a class="waves-effect waves-purple btn-large" href="/users/sign_in">Log In</a></li>
+      </ul>
+    </div>
+  </nav>
+<br><br><br><br><br><br>
 <h1>Walls</h1>
 
 <table>
@@ -26,6 +42,15 @@
   </tbody>
 </table>
 
+</body>
+
+<footer class="purple lighten-2" style="position:fixed;bottom:0;left:0;width:100%;"> <br>
+      <div class="footer-copyright">
+        <div class="container"> Made by <span style="color: #fef5fd;">Splat</span>
+        </div>
+      </div>
+    </footer>
+    
 <br>
 
 <%= link_to 'New Wall', new_wall_path %>
