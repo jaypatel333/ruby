@@ -25,7 +25,7 @@ class WallsController < ApplicationController
   # POST /walls.json
   def create
     @wall = Wall.new(wall_params)
-
+    @wall.user_id = current_user.id
     respond_to do |format|
       if @wall.save
         format.html { redirect_to @wall, notice: 'Wall was successfully created.' }
