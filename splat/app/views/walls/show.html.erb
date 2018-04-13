@@ -1,3 +1,18 @@
+<nav class="purple lighten lighten-1" role="navigation" style="height: 95px; position:fixed;top:0;left:0;width:100%;">
+    <div class="nav-wrapper">
+      <a href="/welcome/index" class="brand-logo"a>
+          <img src="https://i.imgur.com/1oAIFYE.png" alt="log"
+          title="splatlog"
+          style="width: 178px; height: 158px;">
+         
+      <ul class="right hide-on-med-and-down">
+        <li><a class="waves-effect waves-orange darken-3 btn-large" href="/walls/new">Create New Wall</a></li>
+        <li><a class="waves-effect waves-orange darken-3 btn-large" href="/users/edit">Profile</a></li>
+        <li><a class="waves-effect waves-orange darken-3 btn-large" href="/users/sign_in">Log In</a></li>
+      </ul>
+    </div>
+</nav>
+<br><br><br><br><br><br><br><br><br>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -15,7 +30,7 @@
   <%= @wall.access_id %>
 </p>
 
-<h2>Posts</h2>
+<h3>Posts</h3>
 <% @wall.posts.each do |post| %>
   <p>
     <strong>Body:</strong>
@@ -23,7 +38,7 @@
   </p>
 
 <% end %>
-<h2>Add a post:</h2>
+<h3>Add a post:</h3>
 <%= form_for([@wall, @wall.posts.build]) do |f| %>
  
   <p>
@@ -37,3 +52,9 @@
 
 <%= link_to 'Edit', edit_wall_path(@wall) %> |
 <%= link_to 'Back', walls_path %>
+<footer class="purple lighten-2" style="position:fixed;bottom:0;left:0;width:100%;"> <br>
+      <div class="footer-copyright" style="position:fixed;bottom:0;left:0;width:100%;">
+        <div class="container"> Made by <span style="color: #fef5fd;">Splat</span>
+        </div>
+      </div>
+</footer>
