@@ -27,10 +27,12 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.wall_id = Wall.find(params[:id]).id
+    @post.wall_id = Wall.find(params[:wall_id]).id
+    
+    @wall = Wall.find(params[:wall_id])
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @wall, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
