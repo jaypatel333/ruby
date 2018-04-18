@@ -1,0 +1,1 @@
+Feature: Add a new Wall
