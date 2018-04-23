@@ -13,3 +13,7 @@ end
 Then(/^I should see the "([^"]*)" field$/) do |field_name|
   expect(page).to have_field(field_name)
 end
+
+Then("I should see the {string} text") do |text|
+  expect(page).to have_content(text)
+end
