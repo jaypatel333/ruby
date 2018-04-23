@@ -30,6 +30,7 @@
 
   <tbody>
     <% @walls.each do |wall| %>
+      <% if wall.user_id == current_user.id %>
       <tr>
         <td><%= wall.title %></td>
         <td><%= User.find(wall.user_id).username %></td>
@@ -38,6 +39,7 @@
         <td><%= link_to 'Edit', edit_wall_path(wall) %></td>
         <td><%= link_to 'Destroy', wall, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
