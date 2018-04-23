@@ -21,7 +21,7 @@
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>Wall Creator:</strong>
   <%= User.find(@wall.user_id).username %>
 </p>
 
@@ -30,11 +30,12 @@
   <%= @wall.access_id %>
 </p>
 
+
 <h3>Posts</h3>
 <% @wall.posts.each do |post| %>
   <p>
     <strong>Body:</strong>
-    <%= post.body %>
+    <%= post.body %>  <i class="material-icons">arrow_drop_down</i> <i class="material-icons">arrow_drop_up</i>
   </p>
 
 <% end %>
