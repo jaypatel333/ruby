@@ -16,9 +16,13 @@
     </div>
   </nav>
 <br><br><br><br><br><br>
-<h1>Walls</h1>
 
-<table>
+ <div class="row">
+    <div class="col s6 offset-s3">
+      <div class="card purple lighten lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title">Walls</span>
+         <table>
   <thead>
     <tr>
       <th>Title</th>
@@ -43,6 +47,17 @@
     <% end %>
   </tbody>
 </table>
+<%= link_to 'New Wall', new_wall_path %>
+        </div>
+        <div class="card-action">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 
 </body>
 
@@ -55,4 +70,3 @@
     
 <br>
 
-<%= link_to 'New Wall', new_wall_path %>

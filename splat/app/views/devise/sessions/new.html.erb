@@ -22,13 +22,13 @@
     </div>
     <div class="container" style="text-align: center;"><br>
     </div>
-    <div class="container" style="text-align: center;"><br>
-    </div>
-    <div><br><br><br><br>
-
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="container" style="text-align: center;"><br><br><br><br>
+     <div class="row">
+    <div class="col s6 offset-s3">
+      <div class="card purple lighten lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title">Log in</span>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -53,25 +53,15 @@
 
 <%= render "devise/shared/links" %>
 
+        </div>
+        <div class="card-action">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
 
-</div>
-
-    <div class="container"><br>
-    </div>
-    <div class="container"><br>
-    </div>
-    <div class="container"><br>
-    </div>
-    <div class="container"><br>
-    </div>
-    <div class="container"><br>
-    </div>
-    <div class="container"><br>
-    </div>
-    <div class="container"><br>
-    </div>
-    <div class="container"><br>
-    </div>
   </body>
  <footer class="purple lighten-2" style="position:fixed;bottom:0;left:0;width:100%;"> <br>
       <div class="footer-copyright">

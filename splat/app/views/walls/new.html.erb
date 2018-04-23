@@ -15,21 +15,26 @@
       </ul>
     </div>
   </nav>
-    <br><br><br><br>
-    <div class="container"><br>
-        <h1>Create New Wall</h1>
-    </div>
-    <div class="container">
-    </div>
-    <div class="container">
-      <div style="text-align: center;">
-      </div>
-
-          <%= render 'form', wall: @wall %>
+    <br><br><br><br><br><br><br><br>
+     <div class="row">
+    <div class="col s6 offset-s3">
+      <div class="card purple lighten lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title">Create New Wall</span>
+           <%= render 'form', wall: @wall %>
 
           <%= link_to 'Back', walls_path %>
-
+        </div>
+        <div class="card-action">
+          
+        </div>
+      </div>
     </div>
+  </div>
+    
+    
+    
+   
   </body>
  <footer class="purple lighten-2" style="position:fixed;bottom:0;left:0;width:100%;"> <br>
       <div class="footer-copyright">
