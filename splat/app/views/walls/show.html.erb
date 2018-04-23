@@ -20,7 +20,11 @@
 </h3>
 
 <p>
+<<<<<<< HEAD
   <strong>Wall Owner:</strong>
+=======
+  <strong>Wall Creator:</strong>
+>>>>>>> c80b3e9ae9588ee43388cd0b12ccde52809fe8aa
   <%= User.find(@wall.user_id).username %>
 </p>
 
@@ -29,7 +33,17 @@
   <%= @wall.access_id %>
 </p>
 
+<<<<<<< HEAD
 <% @wall.posts.each do |post| %>
+=======
+
+<h3>Posts</h3>
+<% @wall.posts.each do |post| %>
+  <p>
+    <strong>Body:</strong>
+    <%= post.body %>  <i class="material-icons">arrow_drop_down</i> <i class="material-icons">arrow_drop_up</i>
+  </p>
+>>>>>>> c80b3e9ae9588ee43388cd0b12ccde52809fe8aa
 
   <div class="row">
     <div class="col s12 m6">
