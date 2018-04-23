@@ -1,4 +1,4 @@
-Feature: Add a new Wall
+Feature: navigate to New Wall page
   
   As a user
   so that I can create a workspace
