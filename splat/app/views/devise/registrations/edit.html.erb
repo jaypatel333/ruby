@@ -14,24 +14,39 @@
       </ul>
     </div>
   </nav>
-        
+    <div class="container"><br>
+    </div>
+    <div class="container"><br>
+    </div>
     
     <div class="container" style="text-align: center; margin-top: -21px; height: 59px;"><br>
     </div>
-    <div class="container" style="text-align: center;"><br>
-    </div>
     
-  <ul>
-   <li style="float:left">  <div class="container" style="text-align: center;"><br><br><br><br>
-   <h5>User Activity</h5><br><br>
+    <div class="container"><br>
+     <div class="row">
+  
+    <div class="col s6 offset-s0">
+      <div class="card purple lighten lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title">User Activity</span>
+        <br><br>
    <h6><%= link_to "Walls", :walls %></h6>
    <h6>Posts:</h6><br>
+        </div>
+        <div class="card-action">
+         
+        </div>
+      </div>
     </div>
-   </li>
-   <li style="float:right"> <div class="container" style="text-align: center;"><br>
-    <div class="container" style="text-align: left;"><br><br><br><br>
-    <h5>Account Settings</h5><br>
-<h6>Edit <%= resource_name.to_s.humanize %></h6>
+  </div>
+    </div>
+    <div class="container"><br>
+     <div class="row">
+    <div class="col s6 offset">
+      <div class="card purple lighten lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title">Account Settings</span>
+         <h6>Edit <%= resource_name.to_s.humanize %></h6>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -80,7 +95,16 @@
 
 <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
 <%= link_to "Back", :back %>
-</div>
+        </div>
+        <div class="card-action">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+    
+
 
     <div class="container"><br>
     </div>
