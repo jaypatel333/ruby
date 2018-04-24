@@ -40,6 +40,17 @@
         </div>
         <div class="card-action">
           <span class="amber-text"><%= User.find(post.user_id).username%></span>
+          <%= link_to like_post_path(post), method: :put do %>
+          Like
+          <%= post.get_upvotes.size %>
+          <% end %>
+        
+          <%= link_to unlike_post_path(post), method: :put do %>
+          Unlike
+          <%= post.get_downvotes.size %>
+          
+        <% end %>
+        
         </div>
       </div>
     </div>

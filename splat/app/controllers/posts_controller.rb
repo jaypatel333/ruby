@@ -64,6 +64,21 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # upvote method
+  def upvote
+    @post = Post.find(params[:id])
+    @post.upvote_from current_user
+    redirect_back(fallback_location: posts_path)
+  end
+  
+  # downvote method
+  def downvote
+    @post = Post.find(params[:id])
+    @post.downvote_from current_user
+    redirect_back(fallback_location: posts_path)
+  end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
