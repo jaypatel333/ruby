@@ -30,8 +30,8 @@
         <div class="card-content white-text">
           <span class="card-title">User Activity</span>
         <br><br>
-   <h6><%= link_to "Walls", :walls %></h6>
-   <h6>Posts:</h6><br>
+   <%= link_to '<button type="button" class="waves-effect waves amber darken-3 btn" style="color: white !important;">Your Walls</button>'.html_safe, :walls %>
+  
         </div>
         <div class="card-action">
          
@@ -93,8 +93,9 @@
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-<%= link_to "Back", :back %>
+
+<%= link_to '<button type="button" class="waves-effect waves amber darken-3 btn" style="color: white !important;">Logout</button>'.html_safe, destroy_user_session_path, method: :delete %>
+<%= link_to '<button type="button" class="waves-effect waves amber darken-3 btn" style="color: white !important;">Back</button>'.html_safe, :back %>
         </div>
         <div class="card-action">
           

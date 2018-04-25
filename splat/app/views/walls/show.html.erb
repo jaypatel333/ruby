@@ -14,10 +14,15 @@
 </nav>
 <br><br><br><br><br><br><br><br><br>
 <p id="notice"><%= notice %></p>
-
+<center>
 <h3>
   <%= @wall.title %>
 </h3>
+
+<p>
+  <strong>Wall ID:</strong>
+  <%= @wall.id %>
+</p>
 
 <p>
   <strong>Wall Owner:</strong>
@@ -28,7 +33,7 @@
   <strong>Access:</strong>
   <%= @wall.access_id %>
 </p>
-
+</center>
 <% @wall.posts.each do |post| %>
 
   <div class="row">
