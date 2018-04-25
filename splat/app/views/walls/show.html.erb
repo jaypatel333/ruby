@@ -20,6 +20,11 @@
 </h3>
 
 <p>
+  <strong>Wall ID:</strong>
+  <%= @wall.id %>
+</p>
+
+<p>
   <strong>Wall Owner:</strong>
   <%= User.find(@wall.user_id).username %>
 </p>
