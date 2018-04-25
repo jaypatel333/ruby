@@ -1,5 +1,6 @@
 class WallsController < ApplicationController
   before_action :set_wall, only: [:show, :edit, :update, :destroy]
+  before_action :require_login
 
   # GET /walls
   # GET /walls.json
@@ -60,6 +61,12 @@ class WallsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def require_login
+      unless current_user
+        redirect_to "/users/sign_in"
+      end
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.
