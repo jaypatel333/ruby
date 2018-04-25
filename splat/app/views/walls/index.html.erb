@@ -39,15 +39,16 @@
         <td><%= wall.title %></td>
         <td><%= User.find(wall.user_id).username %></td>
         <td><%= wall.access_id %></td>
-        <td><%= link_to 'Show', wall %></td>
-        <td><%= link_to 'Edit', edit_wall_path(wall) %></td>
-        <td><%= link_to 'Destroy', wall, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '<button type="button" class="waves-effect waves amber darken-3 btn" style="color: white !important;">Show</button>'.html_safe, wall %></td>
+        <td><%= link_to '<button type="button" class="waves-effect waves amber darken-3 btn" style="color: white !important;">Edit</button>'.html_safe, edit_wall_path(wall) %></td>
+        <td><%= link_to '<button type="button" class="waves-effect waves amber darken-3 btn" style="color: white !important;">Destroy</button>'.html_safe, wall, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
     <% end %>
   </tbody>
 </table>
-<%= link_to 'New Wall', new_wall_path %>
+<td><%= link_to '<button type="button" class="waves-effect waves amber darken-3 btn" style="color: white !important;">New Wall</button>'.html_safe, new_wall_path %></td>
+
         </div>
         <div class="card-action">
           
