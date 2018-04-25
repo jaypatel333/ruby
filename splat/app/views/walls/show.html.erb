@@ -63,8 +63,12 @@
 
   
 <% end %>
-<h5>Add a splat:</h5>
-<%= form_for([@wall, @wall.posts.build]) do |f| %>
+  <div class="row">
+    <div class="col s6 offset-s3">
+      <div class="card purple lighten lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title">Add a Splat</span>
+           <%= form_for([@wall, @wall.posts.build]) do |f| %>
  
   <p>
     <%= f.text_area :body %>
@@ -73,9 +77,14 @@
     <%= f.submit %>
   </p>
 <% end %>
+        </div>
+        <div class="card-action">
 
-<%= link_to 'Edit', edit_wall_path(@wall) %> |
-<%= link_to 'Back', walls_path %>
+
+<%= link_to '<button type="button" class="waves-effect waves amber darken-3 btn" style="color: white !important;">Edit</button>'.html_safe, edit_wall_path(@wall) %>
+<%= link_to '<button type="button" class="waves-effect waves amber darken-3 btn" style="color: white !important;">Back</button>'.html_safe, walls_path %>
+
+
 <footer class="purple lighten-2" style="position:fixed;bottom:0;left:0;width:100%;"> <br>
       <div class="footer-copyright" style="position:fixed;bottom:0;left:0;width:100%;">
         <div class="container"> Made by <span style="color: #fef5fd;">Splat</span>

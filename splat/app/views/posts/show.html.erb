@@ -42,8 +42,9 @@
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to '<button type="button" class="waves-effect waves amber darken-3 btn" style="color: white !important;">Edit</button>'.html_safe, edit_post_path(@post) %>
+<%= link_to '<button type="button" class="waves-effect waves amber darken-3 btn" style="color: white !important;">Back</button>'.html_safe, posts_path %>
+
 </div>
 
     <div class="container"><br>
