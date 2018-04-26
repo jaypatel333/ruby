@@ -1,3 +1,12 @@
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/garand/sticky/master/jquery.sticky.js"></script>
+  <script>
+    $(window).load(function(){
+      $("#sticker").sticky({ topSpacing: 100 });
+    });
+  </script>
+  
 <nav class="purple lighten lighten-1" role="navigation" style="height: 95px; position:fixed;top:0;left:0;width:100%;">
     <div class="nav-wrapper">
       <a href="/welcome/index" class="brand-logo"a>
@@ -12,7 +21,7 @@
       </ul>
     </div>
 </nav>
-<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
 <p id="notice"><%= notice %></p>
 <center>
 <h3>
@@ -33,51 +42,86 @@
   <strong>Access:</strong>
   <%= @wall.access_id %>
 </p>
+
+
+
 </center>
-<% @wall.posts.each do |post| %>
+  <style>
+
+
+    #sticker {
+      background: #9c27b0;
+      color: white;
+      width: 300px;
+      font-family: Droid Sans;
+      font-size: 40px;
+      line-height: 1.6em;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.2);
+      border-radius: 50px;
+      float:right;
+    }
+
+    #wrapper {
+      width:500px;
+      margin:0 auto;
+    }
+  </style>
+  
+  <div class = "row">
+   
+
+    <div id="wrapper">
+        <p></p>
+        <div id="sticker">
+           
+          
+               <span class="card-title">Add a Splat</span>
+                           <%= form_for([@wall, @wall.posts.build]) do |f| %>
+     
+                            <p>
+                              <%= f.text_area :body %>
+                            </p>
+                            <p>
+                              <%= f.submit %>
+                            </p>
+                          <% end %>
+                           
+             
+     
+          
+        </div>
+       </div>
+    
+      </div>
+  
+
+
+<% @wall.posts.each do |post1| %>
+
 
   <div class="row">
-    <div class="col s6 offset-s3">
+    <div class="col s6 offset-s1">
       <div class="card purple lighten lighten-1">
         <div class="card-content white-text">
-          <span class="card-title"></span>
-         <%= post.body %>
+         
+         <%= post1.body %>
         </div>
-        <div class="card-action">
-          <span class="amber-text"><%= User.find(post.user_id).username%></span>
-          <%= link_to like_post_path(post), method: :put do %>
-          Like
-          <%= post.get_upvotes.size %>
-          <% end %>
+        <!--  upvote downvote     -->
         
-          <%= link_to unlike_post_path(post), method: :put do %>
-          Unlike
-          <%= post.get_downvotes.size %>
-          
-        <% end %>
         
-        </div>
+    
       </div>
     </div>
   </div>
-
-  
-<% end %>
-  <div class="row">
-    <div class="col s6 offset-s3">
-      <div class="card purple lighten lighten-1">
-        <div class="card-content white-text">
-          <span class="card-title">Add a Splat</span>
-           <%= form_for([@wall, @wall.posts.build]) do |f| %>
  
-  <p>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-        </div>
+
+  <% end %>
+        
+        
+        
         <div class="card-action">
 
 
@@ -90,4 +134,5 @@
         <div class="container"> Made by <span style="color: #fef5fd;">Splat</span>
         </div>
       </div>
-</footer>
+</footer>zz
+
