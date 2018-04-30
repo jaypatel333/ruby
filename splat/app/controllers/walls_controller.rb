@@ -1,6 +1,11 @@
 class WallsController < ApplicationController
   before_action :set_wall, only: [:show, :edit, :update, :destroy]
 
+  def access
+    @walls = Wall.find(params[:id])
+    
+  end
+  
   # GET /walls
   # GET /walls.json
   def index
