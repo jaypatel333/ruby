@@ -9,9 +9,9 @@
           style="width: 178px; height: 158px;">
          
       <ul class="right hide-on-med-and-down">
-        <li><a class="waves-effect waves-purple btn-large" href="/walls/new">Create New Wall</a></li>
-        <li><a class="waves-effect waves-purple btn-large" href="/users/edit">Profile</a></li>
-        <li><a class="waves-effect waves-purple btn-large" href="/users/sign_in">Log In</a></li>
+        <li><a class="waves-effect waves amber darken-3 btn-large" style="color: white !important;" href="/walls/new">Create New Wall</a></li>
+        <li><a class="waves-effect waves amber darken-3 btn-large" style="color: white !important;" href="/users/edit">Profile</a></li>
+        <li><a class="waves-effect waves amber darken-3 btn-large" style="color: white !important;" href="/users/sign_in">Log In</a></li>
       </ul>
     </div>
   </nav>
@@ -29,10 +29,22 @@
 <p>
   <strong>Body:</strong>
   <%= @post.body %>
+  <%= link_to like_post_path(post), method: :put do %>
+    Like
+    <%= post.get_upvotes.size %>
+    format.js {render inline: "location.reload();" }
+  <% end %>
+  
+  <%= link_to unlike_post_path(post), method: :put do %>
+    Unlike
+    <%= post.get_downvotes.size %>
+    format.js {render inline: "location.reload();" }
+  <% end %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to '<button type="button" class="waves-effect waves amber darken-3 btn" style="color: white !important;">Edit</button>'.html_safe, edit_post_path(@post) %>
+<%= link_to '<button type="button" class="waves-effect waves amber darken-3 btn" style="color: white !important;">Back</button>'.html_safe, posts_path %>
+
 </div>
 
     <div class="container"><br>

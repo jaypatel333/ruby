@@ -1,3 +1,12 @@
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/garand/sticky/master/jquery.sticky.js"></script>
+  <script>
+    $(window).load(function(){
+      $("#sticker").sticky({ topSpacing: 100 });
+    });
+  </script>
+  
 <nav class="purple lighten lighten-1" role="navigation" style="height: 95px; position:fixed;top:0;left:0;width:100%;">
     <div class="nav-wrapper">
       <a href="/welcome/index" class="brand-logo"a>
@@ -6,22 +15,26 @@
           style="width: 178px; height: 158px;">
          
       <ul class="right hide-on-med-and-down">
-        <li><a class="waves-effect waves-orange darken-3 btn-large" href="/walls/new">Create New Wall</a></li>
-        <li><a class="waves-effect waves-orange darken-3 btn-large" href="/users/edit">Profile</a></li>
-        <li><a class="waves-effect waves-orange darken-3 btn-large" href="/users/sign_in">Log In</a></li>
+       <li><a class="waves-effect waves amber darken-3 btn-large" style="color: white !important;" href="/walls/new">Create New Wall</a></li>
+        <li><a class="waves-effect waves amber darken-3 btn-large" style="color: white !important;" href="/users/edit">Profile</a></li>
+        <li><a class="waves-effect waves amber darken-3 btn-large" style="color: white !important;" href="/users/sign_in">Log In</a></li>
       </ul>
     </div>
 </nav>
-<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
 <p id="notice"><%= notice %></p>
+<center>
+<h3>
+  <%= @wall.title %>
+</h3>
 
 <p>
-  <strong>Title:</strong>
-  <%= @wall.title %>
+  <strong>Wall ID:</strong>
+  <%= @wall.id %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>Wall Owner:</strong>
   <%= User.find(@wall.user_id).username %>
 </p>
 
@@ -30,33 +43,96 @@
   <%= @wall.access_id %>
 </p>
 
-<h3>Posts</h3>
-<% @wall.posts.each do |post| %>
-  <p>
-    <strong>Body:</strong>
-    <%= post.body %>
-    <strong>Poster:</strong>
-    <%= User.find(post.user_id).username%>
-  </p>
 
-<% end %>
-<h3>Add a post:</h3>
-<%= form_for([@wall, @wall.posts.build]) do |f| %>
+
+</center>
+  <style>
+
+
+    #sticker {
+      background: #9c27b0;
+      color: white;
+      width: 300px;
+      font-family: Droid Sans;
+      font-size: 40px;
+      line-height: 1.6em;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.2);
+      border-radius: 50px;
+      float:right;
+    }
+
+    #wrapper {
+      width:500px;
+      margin:0 auto;
+    }
+  </style>
+  
+  <div class = "row">
+   
+
+    <div id="wrapper">
+        <p></p>
+        <div id="sticker">
+           
+          
+               <span class="card-title">Add a Splat</span>
+                           <%= form_for([@wall, @wall.posts.build]) do |f| %>
+     
+                            <p>
+                              <%= f.text_area :body %>
+                            </p>
+                            <p>
+                              <%= f.submit %>
+                            </p>
+                          <% end %>
+                           
+             
+     
+          
+        </div>
+       </div>
+    
+      </div>
+  
+
+
+<% @wall.posts.each do |post1| %>
+
+
+  <div class="row">
+    <div class="col s6 offset-s1">
+      <div class="card purple lighten lighten-1">
+        <div class="card-content white-text">
+         
+         <%= post1.body %>
+        </div>
+        <!--  upvote downvote     -->
+        
+        
+    
+      </div>
+    </div>
+  </div>
  
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
 
-<%= link_to 'Edit', edit_wall_path(@wall) %> |
-<%= link_to 'Back', walls_path %>
+  <% end %>
+        
+        
+        
+        <div class="card-action">
+
+
+<%= link_to '<button type="button" class="waves-effect waves amber darken-3 btn" style="color: white !important;">Edit</button>'.html_safe, edit_wall_path(@wall) %>
+<%= link_to '<button type="button" class="waves-effect waves amber darken-3 btn" style="color: white !important;">Back</button>'.html_safe, walls_path %>
+
+
 <footer class="purple lighten-2" style="position:fixed;bottom:0;left:0;width:100%;"> <br>
       <div class="footer-copyright" style="position:fixed;bottom:0;left:0;width:100%;">
         <div class="container"> Made by <span style="color: #fef5fd;">Splat</span>
         </div>
       </div>
-</footer>
+</footer>zz
+
